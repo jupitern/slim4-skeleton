@@ -25,7 +25,7 @@ Available middleware:
 
 Run this command from the directory in which you want to install your new Slim Framework application.
 
-    php composer.phar create-project jupitern/slim3-skeleton [my-app-name]
+    php composer.phar create-project jupitern/slim4-skeleton [my-app-name]
 
 Replace `[my-app-name]` with the desired directory name for your new application. You'll want to:
 
@@ -89,7 +89,7 @@ $app->any('/test[/{name}]', function ($request, $response, $args) use($app) {
 });
 
 namespace App\Http;
-use Jupitern\Slim3\App\Http\Controller;
+use Jupitern\SlimCore\App\Http\Controller;
 
 class Welcome extends Controller
 {
@@ -185,15 +185,15 @@ var_dump($contents);
 Write and read from session using Session Helper class
 ```php
 // save user info in session
-\Jupitern\Slim3\Utils\Session::set('user', ['id' => '1']);
+\Jupitern\SlimCore\Utils\Session::set('user', ['id' => '1']);
 // get user info from session
-$uservar = \Jupitern\Slim3\Utils\Session::get('user');
+$uservar = \Jupitern\SlimCore\Utils\Session::get('user');
 var_dump($uservar);
 ```
 
 Write and read from cache with Redis service provider named 'redis' on config file
 ```php
-/** @var \Jupitern\Slim3\Utils\Redis $cache */
+/** @var \Jupitern\SlimCore\Utils\Redis $cache */
 $cache = app()->resolve('redis');
 $cache->set("cacheKey", "some test value");
 echo $cache->get("cacheKey");
