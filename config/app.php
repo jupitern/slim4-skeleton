@@ -4,11 +4,11 @@ use Psr\Log\LogLevel;
 use SlimCore\App;
 
 return [
+    'env'           => App::env('APP_ENV', App::DEVELOPMENT),
+    'debug'         => App::env('APP_ENV', App::DEVELOPMENT) != App::DEVELOPMENT,   // used to hide / display errors
     'locale'        => 'pt_PT',
     'timezone'      => 'Europe/Lisbon',
-    'debug'         => true,
-    'consoleOutput' => true,
-    'baseUrl'       => '/',   // url config. Url must end with a slash '/'
+    'baseUrl'       => '/',  // url config. Url must end with a slash '/'
     'indexFile'     => false,
     'routerCacheFile' => null,
     'middleware' => [
